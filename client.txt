@@ -1,0 +1,160 @@
+<!--reviews section ends-->
+        <section class="reviews">
+
+
+                <div class="swiper reviews-slider">
+
+                        <div class="swiper-wrapper">
+
+                                <div class="swiper-slider slide">
+                                        <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                
+                                        </div>
+                      
+                        <p> We assure to offer round the clock support and assistance at any point of your travel.</p>
+                        <h3>Harry Williams</h3>   
+                        <span>traveler</span> 
+                        <img src="./pro.jpg" alt="">                
+                                </div>
+
+
+                                <div class="swiper-slider slide">
+                                        <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                
+                                        </div>
+           
+                        <p> We assure to offer round the clock support and assistance at any point of your travel.</p>
+                        <h3>Vismaya Shruthi</h3>   
+                        <span>traveler</span> 
+                        <img src="./pro2.png" alt="">                
+                                </div>
+
+                                <div class="swiper-slider slide">
+                                        <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                
+                                        </div>
+                                       
+                        <p> We assure to offer round the clock support and assistance at any point of your travel.</p>
+                        <h3>Gowtham</h3>   
+                        <span>traveler</span> 
+                        <img src="./pro3.jpg" alt="">                
+                                </div>
+
+
+                                <div class="swiper-slider slide">
+                                        <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                
+                                        </div>
+                                       
+                        <p> We assure to offer round the clock support and assistance at any point of your travel.</p>
+                        <h3>Lekha Samyuktha</h3>   
+                        <span>traveler</span> 
+                        <img src="./pro4.png" alt="">                
+                                </div>
+
+
+                                <div class="swiper-slider slide">
+                                        <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                
+                                        </div>
+                                       
+                        <p> We assure to offer round the clock support and assistance at any point of your travel.</p>
+                        <h3>Henry Fedrick</h3>   
+                        <span>traveler</span> 
+                        <img src="./pro6.png" alt="">                
+                                </div>
+
+                                
+                                <div class="swiper-slider slide">
+                                        <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                
+                                        </div>
+                                       
+                        <p> We assure to offer round the clock support and assistance at any point of your travel.</p>
+                        <h3>Sitara</h3>   
+                        <span>traveler</span> 
+                        <img src="./pro2.png" alt="">                
+                                </div>
+
+
+                                <div class="swiper-slider slide">
+                                        <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                
+                                        </div>
+                                       
+                        <p> We assure to offer round the clock support and assistance at any point of your travel.</p>
+                        <h3>Jay</h3>   
+                        <span>traveler</span> 
+                        <img src="./pro1.jpg" alt="">                
+                                </div>
+
+                        </div>
+                </div>
+        </section>
+        <!--reviews section ends-->
+
+
+
+
+
+
+
+
+  var swiper = new Swiper(".reviews-slider", {
+    loop:true, 
+    spaceBetween:20,
+    autoHeight:true,
+    grabCursor:true,
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+ });
+
+
+
+
+
+#8e44ad

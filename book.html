@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>Booking</title>
+        <!--swiper css link-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+        <!--font awesome cdn link-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+        <!--css file link-->
+        <link rel="stylesheet" href="style.css">
+        
+       
+
+        
+</head>
+ 
+   <body> 
+   <!--?php  
+// define variables to empty values  
+$conn = mysqli_connect('localhost','root','','book_db') or die('connection failed');
+
+// all required variables defined here
+
+$nameErr = $emailErr = $phoneErr = $addressErr = $locationErr =  $guestsErr = $arrivalsErr = $leavingErr = "";
+$name = $email = $phone = $address = $location =  $guests = $arrivals = $leaving = "";
+ 
+  
+//Input fields validation  
+if ($_SERVER["REQUEST_METHOD"] == "POST") {  
+      
+//String Validation  
+    if (empty($_POST["name"])) {  
+         $nameErr = "Name is required";  
+    } else {  
+        $name = input_data($_POST["name"]);  
+            // check if name only contains letters and whitespace  
+            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {  
+                $nameErr = "Only alphabets and white space are allowed";  
+            }  
+    }  
+      
+    //Email Validation   
+    if (empty($_POST["email"])) {  
+            $emailErr = "Email is required";  
+    } else {  
+            $email = input_data($_POST["email"]);  
+            // check that the e-mail address is well-formed  
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  
+                $emailErr = "Invalid email format";  
+            }  
+     }  
+    
+    //Number Validation  
+    if (empty($_POST["phone"])) {  
+        $phoneErr = "Mobile number is required";  
+} else {  
+        $phone = input_data($_POST["phone"]);  
+        // check if mobile no is well-formed  
+        if (!preg_match ("/^[0-9]*$/", $phone) ) {  
+        $phoneErr = "Only numeric value is allowed.";  
+        }  
+    //check mobile no length should not be less and greator than 10  
+    if (strlen ($phone) != 10) {  
+        $phoneErr = "Mobile number must contain 10 digits.";  
+        }  
+}  
+
+
+
+      
+    if (empty($_POST["address"])) {  
+        $addressErr = "Address is required";  
+} else {  
+        $address = input_data($_POST["address"]);  
+} 
+      
+
+
+     
+     //Empty Field Validation  
+     if (empty($_POST["location"])) {  
+        $locationErr = "Location is required";  
+} else {  
+        $location = input_data($_POST["location"]);  
+} 
+
+
+
+
+
+     if (empty($_POST["guests"])) {  
+        $guestsErr = "Guest number is required";
+} else {  
+        $guests = input_data($_POST["guests"]);  
+} 
+
+
+
+
+    if (empty($_POST["arrivals"])) {  
+            $arrivalsErr = "Arrival date is required";  
+    } else {  
+            $arrivals = input_data($_POST["arrivals"]);  
+    }  
+
+    if (empty($_POST["leaving"])) {  
+        $leavingErr = "Leaving date is required";  
+} else {  
+        $leaving = input_data($_POST["leaving"]);  
+}  
+
+   
+} 
+
+$insert = mysqli_query($conn, "insert into book_form(name, email, phone, address, location, guests, arrivals, leaving) values ('$name', '$email', '$phone', '$address', '$location', '$guests', '$arrivals', '$leaving')") or die('query failed');
+   
+
+function input_data($data) {  
+  $data = trim($data);  
+  $data = stripslashes($data);  
+  $data = htmlspecialchars($data);  
+  return $data;  
+}  
+?-->  
+  
+
+        <!--header section starts-->
+        <section class="header">
+                 
+                <a href="index.html" class="logo"><b>GoTour</b></a>
+
+                <nav class="navbar">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="package.html">Package</a>
+                        <a href="book.html">Book</a>
+                </nav>
+
+                <div id="menu-btn" class="fas fa-bars"></div>
+
+        </section>
+        <!--header section ends-->
+
+        <div class="heading" style="background: url(./book.jpg) no-repeat">
+
+                <h1>Book Now</h1> 
+              
+         </div>
+        
+
+
+          <!--booking section starts-->
+
+        <section class="booking">
+
+        <h1 class="heading-title">book your trip!</h1>
+                 
+                <form action="book.html" method="post" class="book-form">
+
+          
+  
+                <div class="flex">
+                        <div class="inputBox">
+                                <span>name:</span>
+                                <input type="text" placeholder="enter your name" name="name">
+                                <div class="red-message"></div> 
+                        </div>
+
+                        <div class="inputBox">
+                                <span>email:</span>
+                                <input type="email" placeholder="enter your email" name="email">
+                                <div class="red-message"></div>
+                        </div>
+
+                        <div class="inputBox">
+                                <span>phone:</span>
+                                <input type="number" placeholder="enter your number" name="phone">
+                                <div class="red-message"></div>
+                        </div>
+
+                        <div class="inputBox">
+                                <span>address:</span>
+                                <input type="text" placeholder="enter your address" name="address">
+                                <div class="red-message"></div>
+                        </div>
+
+                        <div class="inputBox">
+                                <span>where to:</span>
+                                <input type="text" placeholder="place you want to visit" name="location">
+                                <div class="red-message"></div>
+                        </div>
+
+                        <div class="inputBox">
+                                <span>how many:</span>
+                                <input type="number" placeholder="number of guests" name="guests">
+                                <div class="red-message"></div>
+                        </div>
+
+                        <div class="inputBox">
+                                <span>arrivals:</span>
+                                <input type="date" name="arrivals">
+                                <div class="red-message"></div>
+                        </div>
+
+                        <div class="inputBox">
+                                <span>leaving:</span>
+                                <input type="date" name="leaving">
+                                <div class="red-message"></div>
+                        </div>
+
+                        </div>
+
+                        <input type="submit" value="submit" class="btn" name="send">
+                </form>
+
+                
+ 
+         </section>
+         <!--booking section ends-->
+        
+<!--footer starts-->
+
+<section class="footer">
+
+<div class="box-container">
+
+
+        <div class="box">
+                <h3>Quick links</h3>
+                <a href="index.html"><i class="fas fa-angle-right"></i>Home</a>
+                <a href="about.html"><i class="fas fa-angle-right"></i>About</a>
+                <a href="package.html"><i class="fas fa-angle-right"></i>Package</a>
+                <a href="book.html"><i class="fas fa-angle-right"></i>Book</a>
+        </div>
+
+
+<div class="box">
+        <h3>Extra links</h3> 
+        <a href="#footer"><i class="fas fa-angle-right"></i>Ask questions</a>
+        <a href="#footer"><i class="fas fa-angle-right"></i>About us</a>
+        <a href="#footer"><i class="fas fa-angle-right"></i>Privacy policy</a>
+        <a href="#footer"><i class="fas fa-angle-right"></i>Terms of use</a>
+ </div>
+
+<div class="box">
+        <h3>Contact Info</h3> 
+        <a href="#footer"> <i class="fas fa-phone"> </i> +123-456-789</a>
+        <a href="#footer"> <i class="fas fa-phone"> </i> +111-222-333</a>
+        <a href="#footer"> <i class="fas fa-envelope"> </i> abcdefgh@gmail.com</a>
+        <a href="#footer"> <i class="fas fa-map" ></i>Tamilnadu, India - 600043</a>
+ </div>
+
+ <div class="box">
+        <h3>Follow Us</h3> 
+        <a href="#footer"><i class="fab fa-facebook"></i>Facebook</a>
+        <a href="#footer"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="#footer"><i class="fab fa-instagram"></i>Instagram</a>
+        <a href="#footer"><i class="fab fa-linkedin"></i>Linkedin</a>
+ </div>
+ </div>
+
+ <div class="credit">created by <span>PAVITHRA</span> | all rights reserved! </div>
+
+</section>
+<!--footer ends-->
+
+
+<!--swiper js link-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<!--swiper js link 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.0/swiper-bundle.min.js"></script>--> 
+
+
+<!--js file link-->
+<script src="script.js"></script>
+</body>
+
+</html>
